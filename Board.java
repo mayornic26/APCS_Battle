@@ -1,16 +1,23 @@
 
-public class Board {
+	public class Board {
 	
 	char[][] ships;
 	char[][] guesses;
 	
-public Board(){
+	public Board(){
 		ships = new char[10][10];
 		guesses = new char[10][10];
-}
+	}
       
  //method to place the ships at shiprow(sr) and shipcol(s)
-      public void placeShip (int sr, int sc) {
+ //modify the placeShip method to take in length, startx starty, durectuib 
+      public void placeShip (int len, int sr, int sc, int boolean vertical) {
+		  
+		 
+		  
+		  
+		  
+		  
 		  ships[sr][sc] = 's';
 	  }
 	  
