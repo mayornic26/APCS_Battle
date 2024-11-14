@@ -15,8 +15,8 @@ public class Board {
 		  
 	   boolean okplace = true;
 	    //checks the length to make sure it fits in the rows and collumns
-	   if (len <= 5 && len >= 1 && sr <= 9 && sr >= 0 && sc <= 9 && sc >= 0) { //validate imput
-		  if(vertical && (sr + len <= 10)) {
+	   if (len <= 5 && len >= 2 && sr <= 9 && sr >= 0 && sc <= 9 && sc >= 0) { //validate imput
+		  if(vertical && (sr + len < 10)) {
 		//it is vertical and it fits
 		     for(int i = 0; i < len; i++) {
 			     // if there is a s in the rows 
@@ -65,6 +65,10 @@ public class Board {
 	}
  
     }
+	  
+
+
+
 
 	public boolean checkShip (char[][] withShips, int r, int c){
         if (ships[r][c] == 's'){
