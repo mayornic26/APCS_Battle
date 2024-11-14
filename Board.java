@@ -1,5 +1,5 @@
 
-	public class Board {
+public class Board {
 	
 	char[][] ships;
 	char[][] guesses;
@@ -11,23 +11,68 @@
       
  //method to place the ships at shiprow(sr) and shipcol(s)
  //modify the placeShip method to take in length, startx starty, durectuib 
-      public void placeShip (int len, int sr, int sc, int boolean vertical) {
+    public void placeShip (int len, int sr, int sc, boolean vertical) {
 		  
-		 
-		  
-		  
-		  
-		  
-		  ships[sr][sc] = 's';
-	  }
+	   boolean okplace = true;
+	   if (len <= 5 && len >= 1 && sr <= 9 && sr >= 0 && sc <= 9 && sc >= 0) { //validate imput
+		  if(vertical && (sr + len <= 10)) {
+		//it is vertical and it fits
+		     for(int i = 0; i < len; i++) {
+			     if(ships[sr + i][sc] == 's') {
+			        System.out.println("You cannot place there is a ship already there");
+			        i = len; 
+			        okplace = false;
+			     }
+		      }
+		//if okplace then place
+		     if (okplace) {  		    
+		        for(int j = 0; j < len; j++){
+				    ships[sr + j][sc] = 's';
+			     }
+             }
+		  }
+		  else {
+			if(!vertical && (sc +len <= 10)) {
+				
+		//it is horziontal and it fits
+			   for(int i = 0; i < len; i++) {
+				 if(ships[sr][sc + i] == 's') {
+					System.out.println("You cannot place there is a ship already there");
+					i = len; 
+					okplace = false;
+				  }
+				}
+			
+			
+				//if okplace then place 
+				if (okplace) {
+				   for(int j = 0; j < len; j++) {
+				      ships[sr][sc + j] = 's';
+				    }	
+
+				}		
+			}
+			else {
+				System.out.print("Ship does not fit");
+			}
+		}
+	   } else {
+		  System.out.println("Unvalid inputs");
+	}
+ 
+    }
 	  
-	  public boolean checkShip (char[][] withShips, int r, int c){
-		  if (ships[r][c] == 's'){
-				return true;
-			}
-			 else {
-				 return false;
-			}
+
+
+
+
+	public boolean checkShip (char[][] withShips, int r, int c){
+        if (ships[r][c] == 's'){
+		   return true;
+		}
+		else {
+		   return false;
+		}
 	}
 	
     public void printShips(){
