@@ -5,8 +5,7 @@ public class Tester {
 
 		Board player1 = new Board();
 		
-		player1.placeShip(1,1);
-		
+		player1.placeShip(4,2,2, true);	
 		player1.printShips();
 		
 	}
