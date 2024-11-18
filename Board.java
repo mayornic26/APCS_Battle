@@ -1,4 +1,3 @@
-
 public class Board {
 	
 	char[][] ships;
@@ -82,9 +81,18 @@ public class Board {
     public void printShips(){
 	   for(int r = 0; r < 10; r++){
 		 for(int c = 0; c < 10; c++){
-			System.out.print("," + 0+(ships[r][c]) );
+			System.out.print(" 0"+ ships[r][c]  + ",");
+		  }
+	    System.out.println("\n");
+	   }
+	   System.out.println("____________________________");
+	    for(int j = 0; j < 10; j++){
+		 for(int i = 0; i< 10; i++){
+			System.out.print("0"+ ships[j][i]  + ",");
 		  }
 	    System.out.println("\n");
 	   }
      }
+ 
 }
+
