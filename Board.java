@@ -9,18 +9,19 @@ public class Board {
 	}
       
  //method to place the ships at shiprow(sr) and shipcol(s)
- //modify the placeShip method to take in length, startx starty, durectuib 
+ //placeShip method to take in length, startx starty, direction 
     public void placeShip (int len, int sr, int sc, boolean vertical) {
 		  
 	   boolean okplace = true;
-	    //checks the length to make sure it fits in the rows and collumns
-	   if (len <= 5 && len >= 2 && sr <= 9 && sr >= 0 && sc <= 9 && sc >= 0) { //validate imput
+	    //checks the length to make sure it fits in rows and collumns
+if (len <= 5 && len >= 2 && sr <= 9 && sr >= 0 && sc <= 9 && sc >= 0) { 
+	//validate input
 		  if(vertical && (sr + len < 10)) {
 		//it is vertical and it fits
 		     for(int i = 0; i < len; i++) {
 			     // if there is a s in the rows 
 			     if(ships[sr + i][sc] == 's') {
-			        System.out.println("You cannot place there is a ship already there");
+				    System.out.println("You cannot place there is a ship already there");
 			        i = len; 
 			        okplace = false;
 			     }
@@ -38,7 +39,7 @@ public class Board {
 				
 		//it is horziontal and it fits
 			   for(int i = 0; i < len; i++) {
-				   // if there is a s in the columns it chekcs to see if it then will be ok to place 
+// if there is a s in the columns it checks to see if it then will be ok to place 
 				 if(ships[sr][sc + i] == 's') {
 					System.out.println("You cannot place there is a ship already there");
 					i = len; 
